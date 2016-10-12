@@ -45,25 +45,47 @@
 \section{Device Functionality}
  \begin{flushleft}
   \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot, in addition to 
-  image processing abilities it can also be controlled by operator.
-  In the image processing part first it will 
-  consider color, if it fails perform image processing for the shape of the object.
+  image processing abilities it can also be controlled by operator. In the image processing part first it will consider color, 
+  if it fails \textbf{(olumlu bi cümle yazmamız lazım)} perform image processing for the shape of the object. It will separate 
+  all of the garbage by particularly and put them into bin which is placed on top of the robot in separate places. For increasing 
+  the maneuver ability, we placed steering wheels to the back, besides we choose to place impulse to the front of the robot. The 
+  reason for choosing this method is while its collecting the garbages on the back, it will increase the weight because of that 
+  putting impulse in front will be more reasonable. Another significant thing is deciding the censors. On behalf of understand 
+  approaching an object we will use proximity censor. In addition to proximity censor we will use depth censor for calculating 
+  the depth. \textbf{color sensör yazmadık, depth, proximity ve kamera birlikte nasıl çalışacak}
  \end{flushleft}
  
  \section{Overall Design Scheme}
  \begin{flushleft}
-  
+  The block diagram which represents the overall system design is shown in figure below\\
+  buraya resim gelecek\\
+  The overall system of \textbf{Bastion The Sentinel} consists of 4 main blocks. There are ..(blok isimleri)
  \end{flushleft}
  
  \section{Details of Design}
   \begin{flushleft}
    \subsection{Input Block}
+    \begin{flushleft}
+     \textbf{Bastion The Sentinel} will collect data from environment via its censors and cameras. These data will be used to 
+     feed micro controllers. The main points are:
+     \begin{itemize}
+      \item \textbf{Bastion The Sentinel}'s robotic arm divided by three joints and has one gripper.
+      \item Robotic arm can be rotated by 360$^{\circ}$ and it can be collapsed to minimize the area. Also the gripper part will 
+      have the ability to turn up to 180$^{\circ}$.
+      \item Garbage detection is reinforced by proximity censor. It will provide information about whether there is an object around 
+      of the robot.
+      \item Depth censor will be used to verify data's incoming from proximity censor. If they match the robotic arm will start the 
+      collecting process.
+     \end{itemize}
+
+    \end{flushleft}
+
     \subsubsection{Cameras}
      \begin{flushleft}
       
      \end{flushleft}
    \subsection{Control Block}
-   \subsection{Locomotion and Output Block}
+   \subsection{Output Block}
    \subsection{Communication Block}
   
  \end{flushleft}
