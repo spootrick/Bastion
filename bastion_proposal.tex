@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[table]{xcolor}
 %page anchorlar gerekirse alt satırı sil
 \hypersetup{pageanchor=false}
 
@@ -50,8 +51,8 @@
   all of the garbage by particularly and put them into bin which is placed on top of the robot in separate places. For increasing 
   the maneuver ability, we placed steering wheels to the back, besides we choose to place impulse to the front of the robot. The 
   reason for choosing this method is while its collecting the garbages on the back, it will increase the weight because of that 
-  putting impulse in front will be more reasonable. Another significant thing is deciding the censors. On behalf of understand 
-  approaching an object we will use proximity censor. In addition to proximity censor we will use depth censor for calculating 
+  putting impulse in front will be more reasonable. Another significant thing is deciding the sensors. On behalf of understand 
+  approaching an object we will use proximity sensor. In addition to proximity sensor we will use depth sensor for calculating 
   the depth. \textbf{color sensör yazmadık, depth, proximity ve kamera birlikte nasıl çalışacak}
  \end{flushleft}
  
@@ -66,15 +67,15 @@
   
    \subsection{Input Block}
     \begin{flushleft}
-     \textbf{Bastion The Sentinel} will collect data from environment via its censors and cameras. These data will be used to 
+     \textbf{Bastion The Sentinel} will collect data from environment via its sensors and cameras. These data will be used to 
      feed micro controllers. The main points are:
      \begin{itemize}
       \item \textbf{Bastion The Sentinel}'s robotic arm divided by three joints and has one gripper.
       \item Robotic arm can be rotated by 360$^{\circ}$ and it can be collapsed to minimize the area. Also the gripper part will 
       have the ability to turn up to 180$^{\circ}$.
-      \item Garbage detection is reinforced by proximity censor. It will provide information about whether there is an object around 
+      \item Garbage detection is reinforced by proximity sensor. It will provide information about whether there is an object around 
       of the robot.
-      \item Depth censor will be used to verify data's incoming from proximity censor. If they match the robotic arm will start the 
+      \item Depth sensor will be used to verify data's incoming from proximity sensor. If they match the robotic arm will start the 
       collecting process.
      \end{itemize}
 
@@ -116,8 +117,96 @@
 
  \section{Budget}
   \subsection{Budget Breakdown}
+  \begin{flushleft}
+   % colors of the tabular
+   \definecolor{Gray}{gray}{0.95}
+   \definecolor{LightCyan}{rgb}{0.88,1,1}
+   \definecolor{LightGreen}{rgb}{0.88,0.9,0.9}
+   
+   \newcolumntype{g}{>{\columncolor{Gray}}c}
+   
+   \begin{tabular}{ |c|g|c|g|c| }
+    \hline
+    \rowcolor{LightGreen}
+    \multicolumn{5}{ |c| }{Materials}                                    \\
+    \hline
+    \rowcolor{LightCyan}
+    Number &   Material Name   & Quantity & Unit Price (\$) & Total Cost(\$) \\
+    \hline
+           & DC Motor          & 2        & \$30            & \$60       \\
+    \hline
+           & Servo Motor       & 6        & \$8             & \$48       \\
+    \hline
+           & Wheel             & 4        & \$15            & \$60       \\
+    \hline 
+           & Bearing Hub       & 4        & \$12            & \$48       \\
+    \hline
+           & Carbon Fiber Chassis  & 1    & \$60            & \$60       \\
+    \hline
+           & Upper Plexy Body  & 1        & \$45            & \$45       \\
+    \hline
+           & Robotic Arm Components & 1   & \$250           & \$250      \\
+    \hline
+    \rowcolor{LightGreen}
+    \multicolumn{5}{ |c| }{Kits}                                         \\
+    \hline
+    \rowcolor{LightCyan}
+    -&   Kit Name        & Quantity & Unit Price (\$) & Total Cost(\$)   \\
+    \hline
+     & Raspberry Pi3 Maxi & 1        & \$150            & \$150          \\
+    \hline
+     & Arduino Mega Rev3 & 1        & \$40            & \$40             \\
+    \hline
+     & Arduino Motor Shield & 2     & \$15            & \$30             \\
+    \hline
+    \rowcolor{LightGreen}
+    \multicolumn{5}{ |c| }{Sensors}                                      \\
+    \hline
+    \rowcolor{LightCyan}
+    -&   Sensor Name        & Quantity & Unit Price (\$) & Total Cost(\$)  \\
+    \hline
+    & Proximity Sensor      & 1        & **            &           \\
+    \hline
+    & Depth Sensor      & 1        & \$            & \$          \\
+    \hline
+    & Light Sensor      & 1        & **            &           \\
+    \hline
+    & CMOS Camera Sensor & 2       & \$35          & \$70           \\
+    \hline
+    \rowcolor{LightGreen}
+    \multicolumn{5}{ |c| }{Communication and Internet}                 \\
+    \hline
+    \rowcolor{LightCyan}
+    -&   Name        & Quantity & Unit Price (\$) & Total Cost(\$)  \\
+    \hline
+    & Wireless       & 1        & **              &                    \\
+    \hline
+    & Domain Name    & 1        & \$10            & \$10            \\
+    \hline
+    \rowcolor{LightGreen}
+    \multicolumn{5}{ |c| }{Miscellaneous}                         \\
+    \hline
+    \rowcolor{LightCyan}
+    -&   Name        & Quantity & Unit Price (\$) & Total Cost(\$)  \\
+    \hline
+    & 240 Volt FuckMaster Pro 5000 & 3 & \$1000 & \$3000 \\
+    \hline
+   \end{tabular}
+   \\ 
+   \footnotesize \textit{** indicates Raspberry Pi3 Maxi Kit includes this sensor }\normalsize
+  \end{flushleft}
+
   \subsection{Total Budget}
-  
+   \begin{flushleft}
+    The prices for the components of the \textbf{Bastion The Sentinel} are shown in the table.
+    \begin{itemize}
+     \item Base price: \$
+     \item Worst case scenerio: \$
+     \item Total: \$
+    \end{itemize}
+
+   \end{flushleft}
+
   
  \section{Safety and Security Features}
   \begin{flushleft}
