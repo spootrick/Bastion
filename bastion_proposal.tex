@@ -27,6 +27,7 @@
  \vfill
  \vfill
  {\large \today\\}
+ \href{http://www.bastionthesentinel.com}{www.bastionthesentinel.com}
 \end{titlepage}
 
 
@@ -36,31 +37,43 @@
 
 \section{Scope}
  \begin{flushleft}
-  Today's era consuming is essential for human beings, producing garbage every minute and it leaves great amount of damage 
-  to the nature. How many of people recycle? The answer is not so much. Thus, there is huge space to filled for recycling 
-  and \textbf{Bastion The Sentinel} will help to close the gap. We are aiming for people do not waste their time for garbage 
+  In today's era consuming is essential for human beings, producing garbage every minute and it leaves great amount of damage 
+  to the nature. Thus, there is huge space to fill for recycling 
+  and \textbf{Bastion The Sentinel} will help to close the gap. We are aiming for people to not waste their time for garbage 
   collecting and separating for recycling from the beginning. The purpose of creating this robot is reducing manpower in 
-  garbage collecting and increasing recycling cycle for the make future better.
+  garbage collecting and increase recycling to make future better.
  \end{flushleft}
   
 \section{Device Functionality}
  \begin{flushleft}
-  \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot, in addition to 
+  \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot and it's separated in 
+  two parts. First part is movement controlling and the second part is collecting garbages via image-processing. In addition to 
   image processing abilities it can also be controlled by operator. In the image processing part first it will consider color, 
-  if it fails \textbf{(olumlu bi cümle yazmamız lazım)} perform image processing for the shape of the object. It will separate 
-  all of the garbage by particularly and put them into bin which is placed on top of the robot in separate places. For increasing 
-  the maneuver ability, we placed steering wheels to the back, besides we choose to place impulse to the front of the robot. The 
-  reason for choosing this method is while its collecting the garbages on the back, it will increase the weight because of that 
-  putting impulse in front will be more reasonable. Another significant thing is deciding the sensors. On behalf of understand 
-  approaching an object we will use proximity sensor. In addition to proximity sensor we will use depth sensor for calculating 
-  the depth. \textbf{color sensör yazmadık, depth, proximity ve kamera birlikte nasıl çalışacak}
+  if it will not be successful it will perform image processing for the shape of the object. It will separate 
+  all of the garbage by particularly and put them into box which is placed on top of the robot and operator will do separation. 
+  If there will be more than one objects are collecting, operator can change the box's volume and decide the count of separators.
+  In the environment there can be obstacles or unfavorable weather conditions like rain, snow, etc. Therefore misfortune events 
+  can not be inevitable. According to this reason top of the box can be closable. \\
+  For increasing the maneuver ability, we placed steering wheels to the back, besides we choose to place impulse to the front of 
+  the robot. The reason for choosing this method is while its collecting the garbages on the back, it will increase the weight because 
+  of that giving impulse in front will be more reasonable. \\
+  Another significant thing is deciding the sensors. On behalf of understand 
+  approaching an object we will use proximity sensor. In addition to proximity sensor we will use depth sensor for calculating the depth. 
+  \textbf{burda son kısma göz atmamız lazım cümleler güzel olmamış sanki}
  \end{flushleft}
  
+ \pagebreak
  \section{Overall Design Scheme}
  \begin{flushleft}
   The block diagram which represents the overall system design is shown in figure below\\
-  buraya resim gelecek\\
-  The overall system of \textbf{Bastion The Sentinel} consists of 4 main blocks. There are ..(blok isimleri)
+  \begin{figure}[h]
+   \begin{center}
+    \includegraphics[scale=0.5]{block_diagram}
+    \caption{Block diagram of the system}
+   \end{center}
+  \end{figure}
+  The overall system of \textbf{Bastion The Sentinel} consists of 4 main blocks. There are input block, controller block, 
+  communication block and output block.
  \end{flushleft}
  
  \section{Details of Design}
@@ -83,13 +96,18 @@
 
     \subsubsection{Cameras}
      \begin{flushleft}
-      
+      Visual information will be taken from the (CMOS Camera Sensor)cameras. The robot has led lights which allows it to 
+      operate in the dark environment. Video informations will be taken from 3 different cameras, 2 of them will be placed 
+      in front and the other one will be placed on the back facing to box. We will use front cameras as depth sensor and vision 
+      camera. They will have two mods and we can switch from one to another. Cameras will be connected to Raspberry Pi 3 and 
+      video information will be processed on the user side for performance issues.
      \end{flushleft}
+     
    \subsection{Control Block}
     \begin{flushleft}
-     buraya bi resim gelecek çpe yaklaşımı ve duracağı mesafeyi göstericez\\
+     \textbf{çöp alma aşamasını 3 resimde göstericez. çöpe doğru ok işareti falan olsun}\\
      In this block, Arduino (and Raspberry Pi) will manage the wheel system. It gives impulse to front wheels while it only 
-     rotates back wheels. (burayı biraz uzatabiliriz)
+     rotates from back wheels. Two motor shields will drive four wheels.
     \end{flushleft}
 
    \subsection{Output Block}
@@ -102,14 +120,23 @@
 
    \subsection{Communication Block}
     \begin{flushleft}
-     burayı kenana sorduktan sonra yazıcaz
+     The communication will be established with the robot via wireless connection which is on the Rasbperry Pi 3. Sensor 
+     information will be processed on the robot and will be sent to user. However, video information will be processed on 
+     the user side because of the efficiency. Our main goal is to provide simultaneous video transmission to grab 
+     objects in the best accurate way. We will be able to communicate with the cameras by Raspberry Pi 3's WiFi. 
     \end{flushleft}
-
+ 
  \section{Time Table and Work Schedule}
   \begin{flushleft}
-   
+   \begin{figure}[h!]
+   \begin{center}
+    \includegraphics[scale=0.4]{time_schedule}
+    \caption{Time table and work schedule}
+   \end{center}
+  \end{figure}
   \end{flushleft}
   
+  \pagebreak
  \section{CAD Design, Device Dimensions and Weight}
   \begin{flushleft}
    
@@ -118,6 +145,7 @@
  \section{Budget}
   \subsection{Budget Breakdown}
   \begin{flushleft}
+  \begin{center}
    % colors of the tabular
    \definecolor{Gray}{gray}{0.95}
    \definecolor{LightCyan}{rgb}{0.88,1,1}
@@ -171,7 +199,7 @@
     \hline
     & Light Sensor      & 1        & **            &           \\
     \hline
-    & CMOS Camera Sensor & 4       & \$40          & \$160           \\
+    & CMOS Camera Sensor & 3       & \$40          & \$120           \\
     \hline
     \rowcolor{LightGreen}
     \multicolumn{5}{ |c| }{Communication and Internet}                 \\
@@ -181,7 +209,9 @@
     \hline
     & Wireless       & 1        & **              &                    \\
     \hline
-    & Domain Name    & 1        & \$10            & \$10            \\
+    & Domain Name    & 1        & \$25            & \$25            \\
+    \hline
+    & Web expenses   & 1        & \$30            & \$30            \\
     \hline
     \rowcolor{LightGreen}
     \multicolumn{5}{ |c| }{Miscellaneous}                         \\
@@ -192,6 +222,7 @@
    \end{tabular}
    \\ 
    \footnotesize \textit{** indicates Raspberry Pi3 Maxi Kit includes this sensor }\normalsize
+  \end{center}
   \end{flushleft}
 
   \subsection{Total Budget}
@@ -218,15 +249,12 @@
  \begin{flushleft}
   Comparing the other European countries, Turkey is more polluted. There are many researches for solving 
   this problem. Yet there is not a proper way to accomplish it, however, our robot is the most convenient 
-  way to reduce the pollution problem. The purpose of creating this robot to protecting the nature and 
-  speed up the recycling process. At the same time \textbf{Bastion The Sentinel} is made up with recyclable 
-  materials for this purpose.\\
-  \bigskip
-  burda plastik cam vb atıklar doğada ne kadar sürede kayboluyor onları da yazalım. sonra geri dönüşümün 
-  önemini belirtelim. ve doğaya ne kadar katkı sağlayabileceğimizden bahsedelim.\\
-  \bigskip
-  Teneke kutu 300 yılda, plastik 1000 yılda, cam şişe 1m yılda yok oluyor\\
-  Çöplerin \%75 inden fazlasının geri dönüştürülebileceğini biliyor muydunuz? Ama sadece \%30 kadarı geri dönüştürülüyor.
+  way to reduce the pollution problem. The purpose of creating this robot is to protect the nature and 
+  speed up the recycling process. Metal can in 300 years, plastic in 1000 years, glass bottle 1 million 
+  years to take dissolve in nature. Also \%75 of garbages are occurred by recyclable matters even it's \%30 
+  are used in recycling process. Since leaving recycle part to the nature will take eternity to clean itself 
+  we thought that someone should step up and do something. \\
+
  \end{flushleft}
 
 
