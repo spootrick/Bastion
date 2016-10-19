@@ -1,0 +1,17 @@
+.big-bold {
+  font-family: 'Lalezar', cursive;
+  font-size: 80px;
+}
+
+.bold {
+  font-family: 'Lalezar', cursive;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.medium-open-sans {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
