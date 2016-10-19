@@ -42,6 +42,12 @@
   and \textbf{Bastion The Sentinel} will help to close the gap. We are aiming for people to not waste their time for garbage 
   collecting and separating for recycling from the beginning. The purpose of creating this robot is reducing manpower in 
   garbage collecting and increase recycling to make future better.
+  \begin{figure}[h]
+   \begin{center}
+    \includegraphics[scale=0.2]{perspective_box_open}
+    \caption{Perspective capture of the \textbf{Bastion The Sentinel}}
+   \end{center}
+  \end{figure}
  \end{flushleft}
   
 \section{Device Functionality}
@@ -49,7 +55,7 @@
   \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot and it's separated in 
   two parts. First part is movement controlling and the second part is collecting garbages via image-processing. In addition to 
   image processing abilities it can also be controlled by operator. In the image processing part first it will consider color, 
-  if it will not be successful it will perform image processing for the shape of the object. It will separate 
+  if it will not be successful it will perform image processing for the shape ofkm the object. It will separate 
   all of the garbage by particularly and put them into box which is placed on top of the robot and operator will do separation. 
   If there will be more than one objects are collecting, operator can change the box's volume and decide the count of separators.
   In the environment there can be obstacles or unfavorable weather conditions like rain, snow, etc. Therefore misfortune events 
@@ -105,7 +111,12 @@
      
    \subsection{Control Block}
     \begin{flushleft}
-     \textbf{çöp alma aşamasını 3 resimde göstericez. çöpe doğru ok işareti falan olsun}\\
+     \begin{figure}[h!]
+      \begin{center}
+       \includegraphics[scale=0.3]{3frame}
+       \caption{\textbf{Bastion The Sentinel} is approaching to an object.}
+      \end{center}
+     \end{figure}
      In this block, Arduino (and Raspberry Pi) will manage the wheel system. It gives impulse to front wheels while it only 
      rotates from back wheels. Two motor shields will drive four wheels.
     \end{flushleft}
@@ -115,7 +126,15 @@
      Micro controllers empowers the DC motors for movement process on front wheels and also it empowers servo motors for 
      rotating back wheels. After the data has been collected from the environment, micro controllers uses the robotic arm 
      to gather objects to its container. All this information will be shared with the operator.\\
-     \textbf{Bastion The Sentinel} can use artificial intelligence to determine and separate the objects.
+     \textbf{Bastion The Sentinel} can use artificial intelligence to determine and separate the objects.\\
+     \bigskip
+     \begin{figure}[h]
+      \begin{center}
+       \includegraphics[scale=0.4]{skeleton_detailed}
+       \caption{Mechanical design details (Side view and front view)}
+      \end{center}
+     \end{figure}
+     \bigskip
     \end{flushleft}
 
    \subsection{Communication Block}
@@ -123,8 +142,10 @@
      The communication will be established with the robot via wireless connection which is on the Rasbperry Pi 3. Sensor 
      information will be processed on the robot and will be sent to user. However, video information will be processed on 
      the user side because of the efficiency. Our main goal is to provide simultaneous video transmission to grab 
-     objects in the best accurate way. We will be able to communicate with the cameras by Raspberry Pi 3's WiFi. 
+     objects in the best accurate way. We will be able to communicate with the cameras by Raspberry Pi 3's WiFi.
     \end{flushleft}
+ 
+ \pagebreak
  
  \section{Time Table and Work Schedule}
   \begin{flushleft}
@@ -136,10 +157,14 @@
   \end{figure}
   \end{flushleft}
   
-  \pagebreak
- \section{CAD Design, Device Dimensions and Weight}
+ \section{CAD Design and Device Dimensions}
   \begin{flushleft}
-   
+   \begin{figure}[h!]
+   \begin{center}
+    \includegraphics[scale=0.2]{cad_design}
+    \caption{CAD design, Approximate Dimensions: Length=50cm Width=45cm Height=40cm}
+   \end{center}
+  \end{figure}
   \end{flushleft}
 
  \section{Budget}
@@ -213,15 +238,9 @@
     \hline
     & Web expenses   & 1        & \$30            & \$30            \\
     \hline
-    \rowcolor{LightGreen}
-    \multicolumn{5}{ |c| }{Miscellaneous}                         \\
-    \hline
-    \rowcolor{LightCyan}
-    -&   Name        & Quantity & Unit Price (\$) & Total Cost(\$)  \\
-    \hline
    \end{tabular}
    \\ 
-   \footnotesize \textit{** indicates Raspberry Pi3 Maxi Kit includes this sensor }\normalsize
+   \footnotesize \textit{** indicates that Raspberry Pi 3 Maxi Kit includes this sensor }\normalsize
   \end{center}
   \end{flushleft}
 
@@ -229,9 +248,9 @@
    \begin{flushleft}
     The prices for the components of the \textbf{Bastion The Sentinel} are shown in the table.
     \begin{itemize}
-     \item Base price: \$1081
+     \item Base price: \$1086
      \item Worst case scenario: \$500
-     \item Total: \$1581
+     \item Total: \$1586
     \end{itemize}
 
    \end{flushleft}
