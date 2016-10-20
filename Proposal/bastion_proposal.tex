@@ -7,6 +7,7 @@
 %page anchorlar gerekirse alt satırı sil
 \hypersetup{pageanchor=false}
 
+
 \begin{document}
 \begin{titlepage}
  \centering
@@ -37,11 +38,12 @@
 
 \section{Scope}
  \begin{flushleft}
-  In today's era consuming is essential for human beings, producing garbage every minute and it leaves great amount of damage 
+  In today's era consuming is essential for human beings. This ``consuming" leads to wastes which is a danger for mother nature. 
+  it leaves great amount of damage 
   to the nature. Thus, there is huge space to fill for recycling 
   and \textbf{Bastion The Sentinel} will help to close the gap. We are aiming for people to not waste their time for garbage 
   collecting and separating for recycling from the beginning. The purpose of creating this robot is reducing manpower in 
-  garbage collecting and increase recycling to make future better.
+  collecting garbage and increase recycling to make future better.
   \begin{figure}[h]
    \begin{center}
     \includegraphics[scale=0.2]{perspective_box_open}
@@ -52,33 +54,32 @@
   
 \section{Device Functionality}
  \begin{flushleft}
-  \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot and it's separated in 
-  two parts. First part is movement controlling and the second part is collecting garbages via image-processing. In addition to 
-  image processing abilities it can also be controlled by operator. In the image processing part first it will consider color, 
-  if it will not be successful it will perform image processing for the shape ofkm the object. It will separate 
-  all of the garbage by particularly and put them into box which is placed on top of the robot and operator will do separation. 
-  If there will be more than one objects are collecting, operator can change the box's volume and decide the count of separators.
-  In the environment there can be obstacles or unfavorable weather conditions like rain, snow, etc. Therefore misfortune events 
-  can not be inevitable. According to this reason top of the box can be closable. \\
+  \textbf{Bastion The Sentinel} is designed as a semi-autonomous robot. It will be a multi-tasking robot and it has two 
+  main parts. First part is movement controls and the second part is collecting garbages via image-processing. In addition to 
+  image processing abilities it can also be controlled by an operator. In the image processing part first it will consider color, 
+  if it is not successful it will perform image processing for the shape ofkm the object. It will separate 
+  all of the garbage by particularly and put them into box which is placed on top of the robot. After that operator will do separation.  
+  If there are one or more objects to collect, operator can change the box's volume and decide the count of separators.
+  There could be obstacles around or unfavorable weather conditions like rain, snow, etc. Therefore some incidents are 
+  inevitable. Because of this top of the box can be closable. \\
   For increasing the maneuver ability, we placed steering wheels to the back, besides we choose to place impulse to the front of 
   the robot. The reason for choosing this method is while its collecting the garbages on the back, it will increase the weight because 
   of that giving impulse in front will be more reasonable. \\
-  Another significant thing is deciding the sensors. On behalf of understand 
-  approaching an object we will use proximity sensor. In addition to proximity sensor we will use depth sensor for calculating the depth. 
-  \textbf{burda son kısma göz atmamız lazım cümleler güzel olmamış sanki}
+  Another significant thing is deciding the sensors. We will use a proximity sensor for our robot. This way it will 
+  understand if its approaching to an object or not. In addition to proximity sensor we will use depth sensor for calculating the depth. 
  \end{flushleft}
  
  \pagebreak
  \section{Overall Design Scheme}
  \begin{flushleft}
-  The block diagram which represents the overall system design is shown in figure below\\
+  The block diagram which represents the overall system design is shown below\\
   \begin{figure}[h]
    \begin{center}
     \includegraphics[scale=0.5]{block_diagram}
     \caption{Block diagram of the system}
    \end{center}
   \end{figure}
-  The overall system of \textbf{Bastion The Sentinel} consists of 4 main blocks. There are input block, controller block, 
+  The overall system of \textbf{Bastion The Sentinel} consists of 4 main blocks: input block, controller block, 
   communication block and output block.
  \end{flushleft}
  
@@ -90,11 +91,11 @@
      feed micro controllers. The main points are:
      \begin{itemize}
       \item \textbf{Bastion The Sentinel}'s robotic arm divided by three joints and has one gripper.
-      \item Robotic arm can be rotated by 360$^{\circ}$ and it can be collapsed to minimize the area. Also the gripper part will 
-      have the ability to turn up to 180$^{\circ}$.
+      \item Robotic arm can rotate 360$^{\circ}$ and it can be collapsed to minimize the area. Also the gripper part will 
+      have the ability to rotate up to 180$^{\circ}$.
       \item Garbage detection is reinforced by proximity sensor. It will provide information about whether there is an object around 
       of the robot.
-      \item Depth sensor will be used to verify data's incoming from proximity sensor. If they match the robotic arm will start the 
+      \item Depth sensor will be used to verify incoming data's from proximity sensor. If they match the robotic arm will start the 
       collecting process.
      \end{itemize}
 
@@ -103,9 +104,9 @@
     \subsubsection{Cameras}
      \begin{flushleft}
       Visual information will be taken from the (CMOS Camera Sensor)cameras. The robot has led lights which allows it to 
-      operate in the dark environment. Video informations will be taken from 3 different cameras, 2 of them will be placed 
-      in front and the other one will be placed on the back facing to box. We will use front cameras as depth sensor and vision 
-      camera. They will have two mods and we can switch from one to another. Cameras will be connected to Raspberry Pi 3 and 
+      operate in the dark. Video informations will be taken from 3 different cameras, 2 of them will be placed 
+      in front and the other one will be placed on the back facing to box. We will use front cameras as depth sensors and vision 
+      cameras. They will have two mods and we can switch from one to another. Cameras will be connected to Raspberry Pi 3 and 
       video information will be processed on the user side for performance issues.
      \end{flushleft}
      
@@ -123,7 +124,7 @@
 
    \subsection{Output Block}
     \begin{flushleft}
-     Micro controllers empowers the DC motors for movement process on front wheels and also it empowers servo motors for 
+     Micro controllers empower the DC motors for movement process on front wheels and also it empowers servo motors for 
      rotating back wheels. After the data has been collected from the environment, micro controllers uses the robotic arm 
      to gather objects to its container. All this information will be shared with the operator.\\
      \textbf{Bastion The Sentinel} can use artificial intelligence to determine and separate the objects.\\
@@ -139,8 +140,8 @@
 
    \subsection{Communication Block}
     \begin{flushleft}
-     The communication will be established with the robot via wireless connection which is on the Rasbperry Pi 3. Sensor 
-     information will be processed on the robot and will be sent to user. However, video information will be processed on 
+     The communication will be provided via wireless connection which is on the Rasbperry Pi 3. Sensor 
+     information will be processed on the robot and will be sent to user. However, video data will be processed on 
      the user side because of the efficiency. Our main goal is to provide simultaneous video transmission to grab 
      objects in the best accurate way. We will be able to communicate with the cameras by Raspberry Pi 3's WiFi.
     \end{flushleft}
@@ -252,7 +253,6 @@
      \item Worst case scenario: \$500
      \item Total: \$1586
     \end{itemize}
-
    \end{flushleft}
 
   
@@ -261,20 +261,16 @@
    \textbf{Bastion The Sentinel} operates in a semi-autonomous way. It has a robotic arm and can interact 
    with objects in environment. However, there can be living creatures or objects that we do not want to 
    interact with. This situation creates a safety and security issues. Using the robot with an operator 
-   while it's operating will be safest way to avoid this type of situations. 
+   will be safest way to avoid these type of situations. 
   \end{flushleft}
 
  \section{Business Plan}
  \begin{flushleft}
-  Comparing the other European countries, Turkey is more polluted. There are many researches for solving 
-  this problem. Yet there is not a proper way to accomplish it, however, our robot is the most convenient 
+  In Turkey, pollution rates are higher than other European countries. There are many researches for solving 
+  this problem. Yet there is not a proper way to solve it, however, our robot is the most convenient 
   way to reduce the pollution problem. The purpose of creating this robot is to protect the nature and 
-  speed up the recycling process. Metal can in 300 years, plastic in 1000 years, glass bottle 1 million 
-  years to take dissolve in nature. Also \%75 of garbages are occurred by recyclable matters even it's \%30 
-  are used in recycling process. Since leaving recycle part to the nature will take eternity to clean itself 
-  we thought that someone should step up and do something. \\
-
+  speed up the recycling process. It takes so many years for some materials to dissolve in nature. Also \%75 of 
+  garbages are recyclable but \%30 percent of it used used in recycling process. Moreover, if you leave recycling to nature, 
+  it will take years, that's why we thought that someone should step up and do something about it.
  \end{flushleft}
-
-
 \end{document}
