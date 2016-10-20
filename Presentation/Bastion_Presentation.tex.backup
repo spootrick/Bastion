@@ -1,0 +1,116 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Copenhagen}
+%color themes: default, beaver, beetle, seahorse, wolverine
+\usecolortheme{default}
+ 
+ 
+%Information to be included in the title page:
+\title{Bastion The Sentinel}
+\author{Park Cleaner Robot}
+\logo{\includegraphics[height=1.5cm]{bastion}}
+\institute{Istanbul Bilgi University}
+\date{\today}
+ 
+ 
+\begin{document}
+ % Giriş sayfasını yazdır
+ \frame{\titlepage}
+ 
+ %scope slaytı
+ \begin{frame}
+  \frametitle{SCOPE}
+  \begin{itemize}
+   \item Consuming essential for humans
+   \item It leads to pollution
+   \item Our main goal is separating and recycling the garbages
+  \end{itemize}
+ \end{frame}
+
+ %device functionality slaytı
+ \begin{frame}
+  \frametitle{DEVICE FUNCTIONALITY}
+  \begin{itemize}
+   \item Bastion The Sentinel will be a multi-tasking that has two main parts.
+   \begin{itemize}
+    \item Movement controls
+    \item Robotic arm controls
+   \end{itemize}
+   \item Designed as a semi-autonomous robot
+   \item Robotic arm uses image processing to collect garbages
+   \begin{itemize}
+    \item Image recognization by color difference
+    \item Image recognization by shape
+   \end{itemize}
+   \item Operator takes control in emergency situations
+  \end{itemize}
+ \end{frame}
+
+ %device functionality slaytı
+ \begin{frame}
+  \frametitle{DEVICE FUNCTIONALITY}
+  \begin{itemize}
+   \item It has resizable box
+   \item It is accelerating from front wheels
+   \item To increase the maneuver ability, we placed steering wheels to the back
+   \item It uses:
+   \begin{itemize}
+    \item Proximity sensor
+    \item Depth sensor
+    \item Light sensor
+    \item Cameras
+   \end{itemize}
+  \end{itemize}
+ \end{frame}
+
+ %overall design scheme
+ \begin{frame}
+  \frametitle{OVERALL DESIGN SCHEME}
+  \begin{figure}[h]
+   \begin{center}
+    \includegraphics[scale=0.38]{block_diagram}
+    \caption{Block diagram of the system}
+   \end{center}
+  \end{figure}
+ \end{frame}
+ 
+ %details of design
+ \begin{frame}
+  \frametitle{DESIGN AND DETAILS}
+  \begin{itemize}
+   \item Input Block
+   \begin{itemize}
+    \item Cameras
+   \end{itemize}
+   \item Control Block
+   \item Output Block
+   \item Communication Block
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}
+  \frametitle{Input Block}
+  \begin{itemize}
+    \item \textbf{Bastion The Sentinel}'s robotic arm divided by three joints and has one gripper.
+    \item Robotic arm can rotate 360$^{\circ}$ and it can be collapsed to minimize the area. Also the gripper part will 
+    have the ability to rotate up to 180$^{\circ}$.
+    \item Garbage detection is reinforced by proximity sensor. It will provide information about whether there is an object around 
+    of the robot.
+    \item Depth sensor will be used to verify incoming data's from proximity sensor. If they match the robotic arm will start the 
+    collecting process.
+  \end{itemize}
+ \end{frame}
+ 
+  \begin{frame}
+  \frametitle{Input Block}
+  Cameras:\\
+  \bigskip
+  \begin{itemize}
+    \item There are 3 CMOS Camera Sensor
+    \item Two of them will be used as both depth sensor and vision camera
+    \item We will switch between two mods
+  \end{itemize}
+ \end{frame}
+ 
+\end{document}
