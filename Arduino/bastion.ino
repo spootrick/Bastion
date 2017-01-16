@@ -52,6 +52,7 @@ void setup() {
   // Distance sensor
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
+  
   // led
   pinMode(ledPin, LOW);
 
@@ -66,7 +67,7 @@ void setup() {
 }
 
 void loop() {
-  
+  // Reading serial connection
   if(Serial.available() > 0) {
     state = Serial.read();
     flag = 0;
@@ -116,14 +117,15 @@ void loop() {
     }
   } else if (state == '5') {                          // AUTOMATIC MODE
     if(flag == 0){
-      digitalWrite(trig, HIGH);
-      delayMicroseconds(10);
-      digitalWrite(trig, LOW);
-    
-      // distance calculations
-      duration = pulseIn(echo, HIGH);
-      distance = (duration / 2) / 29.1;
-      Serial.println(distance);
+      digitalWrite(trig, LOW);           // ultrasound is off
+      delayMicroseconds(2); 
+      digitalWrite(trig, HIGH);          // send ping 
+      delayMicroseconds(10);             // ping remains for 10ms
+      digitalWrite(trig, LOW);           // stop ping
+      
+      duration = pulseIn(echo, HIGH);    // listen for the ping
+      distance = (duration / 2) / 29.1;  // convert to cm
+      //Serial.println(distance);
     
       // Distance conditions
       if(distance < 30) {
@@ -136,7 +138,7 @@ void loop() {
         // if there is no obstacle
         goForward();
       } 
-      flag = 1;
+      // flag = 1;  // commented out for ideal performance
     }
   } else if (state == '8') {                         // TEST LED OFF
     digitalWrite(ledPin, LOW);
@@ -151,7 +153,7 @@ void loop() {
       flag = 1;
     }
   } else {
-    // stop the robot
+    // stop moving
     stopIt();
   }
 }
