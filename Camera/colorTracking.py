@@ -9,7 +9,7 @@ except ImportError:
     raise ImportError('Could not import numpy library')
 
 
-# capturing through webcam
+# capturing through named pipe
 cap = cv2.VideoCapture(r'fifo264')
 # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 # cap.set(cv2.CAP_PROP_FRAME_HIGHT, 480)
