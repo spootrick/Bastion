@@ -1,3 +1,13 @@
+# ====================================
+# -*- coding: utf-8 -*-
+# project name:     Bastion The Sentinel
+# file name:        colorTracking.py
+# python version:   3.4
+# description:      tracking multiple colors at the same time with
+#                   raspberry pi camera module with opencv python
+#                   library
+# ====================================
+
 try:
     import cv2
 except ImportError:
@@ -78,12 +88,32 @@ while 1:
         area = cv2.contourArea(contour)
         if (area > 300):
             x, y, w, h = cv2.boundingRect(contour)
-            img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 255), 2)
             label_yellow = "yellow: {}, {}".format(x, y)
-            cv2.putText(img, label_yellow, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0))
+            cv2.putText(img, label_yellow, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255))
 
 
+    # show main window
     cv2.imshow("Bastion Color tracking", img)
+
+    # show red mask window
+    cv2.imshow("mask_red", red)
+    # show red mask
+    cv2.imshow("mask red", res_0)
+
+    # show blue mask window
+    cv2.imshow("mask blue", res_1)
+    # show blue mask
+    # cv2.imshow("mask_blue", blue)
+
+    # show yellow mask window
+    cv2.imshow("mask yellow", res_2)
+    # show yellow mask
+    # cv2.imshow("mask_yellow", yellow)
+
+    # show converted hsv image
+    cv2.imshow("hsv", hsv)
+
     if cv2.waitKey(10) & 0xFF == ord('q'):
         cap.release()
         cv2.destroyAllWindows()
