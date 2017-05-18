@@ -27,24 +27,32 @@ void setup() {
 }
 
 /**
- * This method 
- */
-void stopMove(){
-  motorDriver.setM1Speed(0);
-  motorDriver.setM2Speed(0);
-}
-
-/**
  * This method is for used to move the robot back and forth
  */
-void makeMove(int speed){
+void setMotorSpeed(int speed){
   if(speed >= -400 && speed <= 400){
     motorDriver.setM1Speed(speed);
     motorDriver.setM2Speed(speed);
 
     stopIfFault();
-    delay(2);
+    delay(1);
   }
+}
+
+void turnLeft(){
+  motorDriver.setM1Speed(100);
+  motorDriver.setM2Speed(-100);
+  delay(225);
+  motorDriver.setM1Speed(0);
+  motorDriver.setM2Speed(0);
+}
+
+void turnRight(){
+  motorDriver.setM1Speed(-100);
+  motorDriver.setM2Speed(100);
+  delay(225);
+  motorDriver.setM1Speed(0);
+  motorDriver.setM2Speed(0);
 }
 
 /**
@@ -53,20 +61,26 @@ void makeMove(int speed){
 void loop() {
   if(Serial.available()){
     switch(Serial.parseInt()){
-      case 0:
-        stopMove();
+      case 0: // stop
+        setMotorSpeed(0);
         break;
-      case 1:
-        makeMove(200);
+      case 1: // move forward
+        setMotorSpeed(400);
         break;
-      case 2:
-        makeMove(-200);
+      case 2: // move backward
+        setMotorSpeed(-400);
+        break;
+      case 3: // turn left
+        turnLeft();
+        break;
+      case 4: // turn right
+        turnRight();
         break;
       default:
         Serial.println("Uups!.. Wrong command entered!");
     }
   }
-  delay(100);
+  delay(1);
 }
 
 
