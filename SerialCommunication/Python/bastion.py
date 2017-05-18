@@ -15,13 +15,6 @@ $$$$$$$/   $$$$$$$/ $$$$$$$/     $$$$/  $$/  $$$$$$/  $$/   $$/
 
 Type "h" for help.
 
-Type "w" for move forward.
-Type "s" for move backward.
-Type "a" for turn left.
-Type "d" for turn right.
-
-Type "space" for stop!
-
 """)
 
 try:
@@ -41,10 +34,13 @@ Bastion Help Page
 -------------------------
 w - move forward
 s - move backward
+a - turn left
+d - turn right
 
-space - stop
+Press "space" for stop!
 
 """)
+
   elif command == "w":
     serial_connection.write(bytes('1', 'UTF-8'))
     print("Moving forward.. ")

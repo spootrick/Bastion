@@ -21,7 +21,7 @@ void stopIfFault(){
  * Setup code which runs once.
  */
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Serial connection established.");
   motorDriver.init();
 }
@@ -82,6 +82,3 @@ void loop() {
   }
   delay(1);
 }
-
-
-
