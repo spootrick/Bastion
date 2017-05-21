@@ -17,14 +17,17 @@ void stopIfFault(){
   }
 }
 
+
 /**
  * Setup code which runs once.
  */
 void setup() {
   Serial.begin(9600);
+  Serial.setTimeout(50); // limiting the max wait time for serial data
   Serial.println("Serial connection established.");
   motorDriver.init();
 }
+
 
 /**
  * This method is for used to move the robot back and forth
@@ -39,6 +42,10 @@ void setMotorSpeed(int speed){
   }
 }
 
+
+/**
+ * This method is for turning left
+ */
 void turnLeft(){
   motorDriver.setM1Speed(100);
   motorDriver.setM2Speed(-100);
@@ -47,6 +54,10 @@ void turnLeft(){
   motorDriver.setM2Speed(0);
 }
 
+
+/**
+ * This method is for turning right
+ */
 void turnRight(){
   motorDriver.setM1Speed(-100);
   motorDriver.setM2Speed(100);
@@ -64,16 +75,22 @@ void loop() {
       case 0: // stop
         setMotorSpeed(0);
         break;
-      case 1: // move forward
+      case 1: // move forward 200
+        setMotorSpeed(200);
+        break;
+      case 2: // move backward 200
+        setMotorSpeed(-200);
+        break;
+      case 3: // move forward 400
         setMotorSpeed(400);
         break;
-      case 2: // move backward
+      case 4: // move backward 400
         setMotorSpeed(-400);
         break;
-      case 3: // turn left
+      case 5: // turn left
         turnLeft();
         break;
-      case 4: // turn right
+      case 6: // turn right
         turnRight();
         break;
       default:
@@ -82,3 +99,4 @@ void loop() {
   }
   delay(1);
 }
+
