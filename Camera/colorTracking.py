@@ -19,12 +19,14 @@ except ImportError:
     raise ImportError('Could not import numpy library')
 
 
-# capturing through named pipe
-cap = cv2.VideoCapture(r'fifo264')
-# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-# cap.set(cv2.CAP_PROP_FRAME_HIGHT, 480)
+# capturing through raspberry pi camera
+cap = cv2.VideoCapture('http://192.168.43.46:8000/stream.mjpg')
+
+# on kaplumbaa network use below ip address
+# cap = cv2.VideoCapture('http://192.168.1.25:8000/stream.mjpg')
 
 while 1:
+    # reading the video capture
     _, img = cap.read()
 
     # converting frame(img, i.e BGR) to HSV
