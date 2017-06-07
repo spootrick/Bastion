@@ -71,6 +71,27 @@ def draw_screen_for_serial_connection(screen):
             serial_connection.write(bytes('0', 'UTF-8'))
             command = 'STOP'
 
+        # Servo controls
+        # SERVO 1-2
+        elif k == ord('0'):
+            serial_connection.write(bytes('7', 'UTF-8'))
+            # serial_connection.write(bytes('9', 'UTF-8'))
+            command = 'Servo 1-2 moving positive direction'
+
+        elif k == ord(','):
+            serial_connection.write(bytes('8', 'UTF-8'))
+            # serial_connection.write(bytes('10', 'UTF-8'))
+            command = 'Servo 1-2 moving negative direction'
+
+        # SERVO 3
+        elif k == ord('7'):
+            serial_connection.write(bytes('11', 'UTF-8'))
+            command = 'Servo 1 moving positive direction'
+
+        elif k == ord('1'):
+            serial_connection.write(bytes('12', 'UTF-8'))
+            command = 'Servo 1 moving negative direction'
+
         # declare the strings
         title = "Bastion The Sentinel Controller"[:width-1]
         subtitle = "Written by spootrick"[:width-1]
