@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Abstract}{3}{section.1}
+\contentsline {section}{\numberline {2}Device Functionality and Overall Design}{3}{section.2}
+\contentsline {section}{\numberline {3}Hardware}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Raspberry Pi 3}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Raspberry Pi 3 Camera Module v1.3}{4}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Image Processing}{5}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Arduino Mega}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Robotic Arm}{6}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Power Supply}{6}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Router}{6}{subsection.3.6}
+\contentsline {section}{\numberline {4}Software}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Raspbian Jessie}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}OpenCV Python Library}{7}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Serial Connection}{8}{subsection.4.3}
+\contentsline {section}{\numberline {5}Source Codes}{10}{section.5}
+\contentsline {section}{\numberline {6}References}{22}{section.6}
