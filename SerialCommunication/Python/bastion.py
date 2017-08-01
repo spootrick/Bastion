@@ -27,7 +27,7 @@ def draw_screen_for_serial_connection(screen):
     curses.cbreak()
 
     try:
-      serial_connection = serial.Serial('/dev/ttyACM0', 9600)
+      serial_connection = serial.Serial('/dev/ttyACM1', 9600)
     except:
       print('Error: Cannot connected to the arduino!')
       sys.exit()
@@ -72,25 +72,79 @@ def draw_screen_for_serial_connection(screen):
             command = 'STOP'
 
         # Servo controls
-        # SERVO 1-2
+        # SERVO 1
         elif k == ord('0'):
             serial_connection.write(bytes('7', 'UTF-8'))
-            # serial_connection.write(bytes('9', 'UTF-8'))
-            command = 'Servo 1-2 moving positive direction'
+            command = 'Servo 1 moving positive direction'
 
         elif k == ord(','):
             serial_connection.write(bytes('8', 'UTF-8'))
-            # serial_connection.write(bytes('10', 'UTF-8'))
-            command = 'Servo 1-2 moving negative direction'
+            command = 'Servo 1 moving negative direction'
+
+        # SERVO 2
+    	elif k == ord('n'):
+    		serial_connection.write(bytes('9', 'UTF-8'))
+    		command = 'Servo 2 moving positive direction'
+
+    	elif k == ord('m'):
+    		serial_connection.write(bytes('10', 'UTF-8'))
+    		command = 'Servo 2 moving negative direction'
 
         # SERVO 3
         elif k == ord('7'):
             serial_connection.write(bytes('11', 'UTF-8'))
-            command = 'Servo 1 moving positive direction'
+            command = 'Servo 3 moving positive direction'
 
         elif k == ord('1'):
             serial_connection.write(bytes('12', 'UTF-8'))
-            command = 'Servo 1 moving negative direction'
+            command = 'Servo 3 moving negative direction'
+
+        # SERVO 4
+        elif k == ord('8'):
+            serial_connection.write(bytes('13', 'UTF-8'))
+            command = 'Servo 4 moving positive direction'
+
+        elif k == ord('2'):
+            serial_connection.write(bytes('14', 'UTF-8'))
+            command = 'Servo 4 moving negative direction'
+
+        # SERVO 5 (in arduino servo 6)
+        elif k == ord('9'):
+            serial_connection.write(bytes('17', 'UTF-8'))
+            command = 'Servo 5 moving positive direction'
+        elif k == ord('3'):
+            serial_connection.write(bytes('18', 'UTF-8'))
+            command = 'Servo 5 moving negative direction'
+
+        # SERVO 5 ROTATOR 1
+        elif k == ord('4'):
+        	serial_connection.write(bytes('15', 'UTF-8'))
+        	command = 'Servo 5 ROTATOR moving positive direction'
+
+        elif k == ord('6'):
+        	serial_connection.write(bytes('16', 'UTF-8'))
+        	command = 'Servo 5 ROTATOR moving negative direction'
+		
+		# SERVO 6 ROTATOR 2
+        elif k == ord('+'):
+        	serial_connection.write(bytes('19', 'UTF-8'))
+        	command = 'Servo 6 ROTATOR moving positive direction'
+
+        elif k == ord('-'):
+        	serial_connection.write(bytes('20', 'UTF-8'))
+        	command = 'Servo 6 ROTATOR moving negative direction'
+
+
+
+        # SERVO 8
+        elif k == ord('/'):
+            serial_connection.write(bytes('21', 'UTF-8'))
+            command = 'Gripper (Servo 8) opening'
+
+        elif k == ord('*'):
+            serial_connection.write(bytes('22', 'UTF-8'))
+            command = 'Gripper (Servo 8) closing'
+
 
         # declare the strings
         title = "Bastion The Sentinel Controller"[:width-1]
